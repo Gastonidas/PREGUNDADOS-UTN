@@ -1,0 +1,92 @@
+[
+    {
+        "nombre": "pepita",
+        "puntaje": 125,
+        "fecha": "2025-06-29 23:26:47"
+    },
+    {
+        "nombre": "papapapa",
+        "puntaje": 25,
+        "fecha": "2025-06-30 01:09:35"
+    },
+    {
+        "nombre": "dai",
+        "puntaje": -75,
+        "fecha": "2025-06-30 01:14:02"
+    },
+    {
+        "nombre": "hola",
+        "puntaje": 25,
+        "fecha": "2025-06-30 01:44:13"
+    },
+    {
+        "nombre": "prueba",
+        "puntaje": -75,
+        "fecha": "2025-06-30 01:47:25"
+    },
+    {
+        "nombre": "daira",
+        "puntaje": -75,
+        "fecha": "2025-06-30 01:54:04"
+    },
+    {
+        "nombre": "daira",
+        "puntaje": 25,
+        "fecha": "2025-06-30 11:50:11"
+    },
+    {
+        "nombre": "gaston",
+        "puntaje": -75,
+        "fecha": "2025-06-30 19:49:34"
+    },
+    {
+        "nombre": "gaston",
+        "puntaje": 125,
+        "fecha": "2025-06-30 19:52:27"
+    },
+    {
+        "nombre": "gaston",
+        "puntaje": 625,
+        "fecha": "2025-06-30 19:55:06"
+    },
+    {
+        "nombre": "njj",
+        "puntaje": -75,
+        "fecha": "2025-06-30 20:01:58"
+    },
+    {
+        "nombre": "gaston",
+        "puntaje": 575,
+        "fecha": "2025-06-30 20:03:07"
+    },
+    {
+        "nombre": "gas",
+        "puntaje": 175,
+        "fecha": "2025-06-30 20:54:01"
+    },
+    {
+        "nombre": "gasti",
+        "puntaje": 425,
+        "fecha": "2025-06-30 21:08:08"
+    },
+    {
+        "nombre": "gaston",
+        "puntaje": 975,
+        "fecha": "2025-06-30 21:19:23"
+    },
+    {
+        "nombre": "gaston",
+        "puntaje": 825,
+        "fecha": "2025-06-30 22:07:33"
+    },
+    {
+        "nombre": "fff",
+        "puntaje": 225,
+        "fecha": "2025-07-01 00:09:25"
+    },
+    {
+        "nombre": "tonga",
+        "puntaje": 1400,
+        "fecha": "2025-07-01 00:15:49"
+    }
+]
