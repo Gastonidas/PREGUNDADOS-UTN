@@ -4,8 +4,8 @@ from Constantes import *
 from funciones import *
 
 fondo_pantalla = pygame.transform.scale(pygame.image.load("assets/imagenes/bg_final.jpg"), PANTALLA)
-input_caja_rect = pygame.Rect(ANCHO // 2 - 150, ALTO // 2 + 50, 300, 40)
-boton_guardar_rect = pygame.Rect(ANCHO // 2 - 100, ALTO // 2 + 120, 200, 50)
+input_caja_rect = pygame.Rect(ANCHO // 2 - 150, ALTO // 2 + 60, 300, 40)
+boton_guardar_rect = pygame.Rect(ANCHO // 2 - 100, ALTO // 2 + 160, 200, 50)
 
 def mostrar_fin_partida(pantalla: pygame.Surface, cola_eventos: list[pygame.event.
 Event], datos_juego: dict) -> str:
@@ -45,8 +45,8 @@ Event], datos_juego: dict) -> str:
     mostrar_texto(pantalla, "Ingresa tu nombre:", FUENTE_TEXTO, COLOR_BLANCO, pygame.Rect(input_caja_rect.x, input_caja_rect.y - 50, 300, 50))
     
     # dibujo caja input
-    input_caja_color = COLOR_BLANCO if datos_juego["input_active"] else (100, 100, 100)
-    pygame.draw.rect(pantalla, input_caja_color, input_caja_rect, 2)
+    pygame.draw.rect(pantalla, COLOR_BLANCO, input_caja_rect, 2) # borde
+    pygame.draw.rect(pantalla, COLOR_NEGRO, input_caja_rect) # fondo
     input_texto = FUENTE_TEXTO.render(datos_juego["nombre_jugador_input"], True, COLOR_BLANCO)
     pantalla.blit(input_texto, (input_caja_rect.x + 5, input_caja_rect.y + 5))
 

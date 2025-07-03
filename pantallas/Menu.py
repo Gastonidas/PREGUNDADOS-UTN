@@ -35,7 +35,6 @@ def mostrar_menu(pantalla:pygame.Surface,cola_eventos:list[pygame.event.Event]) 
     mostrar_texto(lista_botones[BOTON_PUNTUACIONES]["superficie"],"RANKINGS", FUENTE_TEXTO, COLOR_BLANCO, lista_botones[BOTON_PUNTUACIONES]["superficie"].get_rect(), center_align=True)
     mostrar_texto(lista_botones[BOTON_CONFIG]["superficie"],"AJUSTES", FUENTE_TEXTO, COLOR_BLANCO, lista_botones[BOTON_CONFIG]["superficie"].get_rect(), center_align=True)
     mostrar_texto(lista_botones[BOTON_SALIR]["superficie"],"SALIR", FUENTE_TEXTO, COLOR_BLANCO, lista_botones[BOTON_SALIR]["superficie"].get_rect(), center_align=True)
-    mostrar_texto(lista_botones[BOTON_DIFICULTAD]["superficie"],"DIFICULTAD", FUENTE_TEXTO, COLOR_BLANCO, lista_botones[BOTON_DIFICULTAD]["superficie"].get_rect(), center_align=True)
     
     
     return retorno

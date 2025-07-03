@@ -1,6 +1,6 @@
 # Preguntados UTN - Versión Pygame
 
-![Preguntados](https://i.imgur.com/39aI8nS.png)
+![Preguntados]
 
 Este proyecto es una versión de escritorio del popular juego de trivia "Preguntados", desarrollado en Python con la biblioteca `pygame`. Fue creado como parte del segundo parcial de la materia **Programación I** en la **Tecnicatura Universitaria en Programación** de la Universidad Tecnológica Nacional (UTN), Facultad Regional Avellaneda.
 
@@ -63,29 +63,7 @@ El juego pone a prueba los conocimientos del jugador a través de preguntas de d
 
 El código está organizado de manera modular para facilitar su lectura y mantenimiento:
 
-PREGUNDADOS-UTN/
-│
-├── main.py                # Punto de entrada principal y bucle del juego.
-├── funciones.py           # Funciones auxiliares (lógica, UI, etc.).
-├── Constantes.py          # Constantes globales (colores, tamaños, etc.).
-│
-├── data/
-│   ├── preguntas.csv      # Base de datos de preguntas y sus estadísticas.
-│   └── partidas.json      # Almacena los puntajes de las partidas guardadas.
-│
-├── pantallas/
-│   ├── Menu.py            # Lógica de la pantalla del menú principal.
-│   ├── Categorias.py      # Lógica de la pantalla de selección de categoría.
-│   ├── Juego.py           # Lógica de la pantalla de juego principal.
-│   ├── Ajustes.py         # Lógica de la pantalla de configuración.
-│   ├── Rankings.py        # Lógica de la pantalla de mejores puntajes.
-│   └── Final.py           # Lógica de la pantalla de fin de partida.
-│
-└── assets/
-├── imagenes/          # Imágenes y texturas para la UI.
-├── sonidos/           # Efectos de sonido y música.
-└── fuentes/           # Fuentes de texto utilizadas.
-
+![Estructura de Carpetas](assets/imagenes/estructura_carpetas.png)
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -97,4 +75,4 @@ PREGUNDADOS-UTN/
 
 ## 📄 Consigna Original
 
-Este proyecto fue desarrollado siguiendo las pautas del [Segundo Parcial de Programación I (PDF)](gastonidas/pregundados-utn/PREGUNDADOS-UTN-ddfd10c4414eb83fb508fedc1bdd53acaa2171d7/Segundo%20parcial%20Programacio%CC%81n%201%20AD.pdf).
+Este proyecto fue desarrollado siguiendo las pautas del [Segundo Parcial Programacion (PDF)](https://github.com/Gastonidas/PREGUNDADOS-UTN/blob/9ef893fd8f0641d1fec003b9d53acddf0316271e/Segundo%20parcial%20Programacio%CC%81n%201%20AD.pdf)

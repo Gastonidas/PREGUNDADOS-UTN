@@ -199,10 +199,10 @@ def crear_elemento_juego(textura:str,ancho:int,alto:int,pos_x:int,pos_y:int) -> 
 def crear_botones_menu() -> list:
     lista_botones = []
     pos_x_menu = (ANCHO - ANCHO_BOTON_MENU) // 2 
-    pos_y = 200
+    pos_y = 250
     espaciado_menu = 85 # espaciado entre botones del menu
 
-    for i in range(5):
+    for i in range(4):
         # dimensiones
         boton = crear_elemento_juego("assets/imagenes/fondo_boton.jpg", ANCHO_BOTON_MENU, ALTO_BOTON_MENU, pos_x_menu, pos_y)
         pos_y += espaciado_menu

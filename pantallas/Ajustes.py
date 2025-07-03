@@ -9,7 +9,7 @@ boton_unmute = crear_elemento_juego("assets/imagenes/boton_unmute.png", 50, 50, 
 boton_suma = crear_elemento_juego("assets/imagenes/boton_mas.png",60,60,750,350)
 boton_resta = crear_elemento_juego("assets/imagenes/boton_menos.png",60,60,470,350)
 boton_volver = crear_elemento_juego("assets/imagenes/fondo_boton.jpg",200,40,10,10)
-fondo_pantalla = pygame.transform.scale(pygame.image.load("assets/imagenes/bg2.jpg"),PANTALLA)
+fondo_pantalla = pygame.transform.scale(pygame.image.load("assets/imagenes/bg_ajustes.jpg"),PANTALLA)
 
 def mostrar_ajustes(pantalla:pygame.Surface,cola_eventos:list[pygame.event.Event],datos_juego:dict) -> str:
     pantalla.blit(fondo_pantalla,(0,0))
