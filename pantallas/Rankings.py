@@ -8,7 +8,7 @@ def mostrar_rankings(pantalla: pygame.Surface, cola_eventos: list[pygame.event.E
     """
     esta funcion muestra y organiza en pantalla los contenidos almacenados en el archivo partidas.json
     """
-    fondo_pantalla = pygame.transform.scale(pygame.image.load("assets/imagenes/bg2.jpg"), PANTALLA)
+    fondo_pantalla = pygame.transform.scale(pygame.image.load("assets/imagenes/bg_rankings.jpg"), PANTALLA)
     pantalla.blit(fondo_pantalla, (0, 0))
     
     retorno = "rankings"
@@ -26,15 +26,15 @@ def mostrar_rankings(pantalla: pygame.Surface, cola_eventos: list[pygame.event.E
     pantalla.blit(boton_volver["superficie"], boton_volver["rectangulo"])
     mostrar_texto(boton_volver["superficie"], "VOLVER", FUENTE_RESPUESTA, COLOR_BLANCO, boton_volver['superficie'].get_rect(), center_align=True)
 
-    titulo_rect = pygame.Rect(0, 100, ANCHO, 50)
-    mostrar_texto(pantalla, "MEJORES PUNTAJES", FUENTE_VOLUMEN, COLOR_BLANCO, titulo_rect, center_align=True)
+    # titulo_rect = pygame.Rect(0, 100, ANCHO, 50)
+    # mostrar_texto(pantalla, "MEJORES PUNTAJES", FUENTE_VOLUMEN, COLOR_BLANCO, titulo_rect, center_align=True)
 
     top_10 = obtener_top_10()
     
     if not top_10:
         # mensaje si no hay puntajes guardados
         mensaje_rect = pygame.Rect(0, 250, ANCHO, 50)
-        mostrar_texto(pantalla, "No hay puntajes guardados", FUENTE_TEXTO, COLOR_BLANCO, mensaje_rect, center_align=True)
+        mostrar_texto(pantalla, "No hay puntajes guardados", FUENTE_TEXTO, COLOR_BLANCO, mensaje_rect, center_align=False)
     else:
         # mostrar todos los puntajes que se encuentren en la lista
         pos_y_inicial = 200
