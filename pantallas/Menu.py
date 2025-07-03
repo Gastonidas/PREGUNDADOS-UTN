@@ -24,8 +24,6 @@ def mostrar_menu(pantalla:pygame.Surface,cola_eventos:list[pygame.event.Event]) 
                             retorno = "rankings"
                         elif i == BOTON_CONFIG:
                             retorno = "ajustes"
-                        elif i == BOTON_DIFICULTAD:
-                            pass
                         else:
                             retorno = "salir"
         
