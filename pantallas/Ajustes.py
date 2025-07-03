@@ -23,19 +23,23 @@ def mostrar_ajustes(pantalla:pygame.Surface,cola_eventos:list[pygame.event.Event
                 if boton_suma["rectangulo"].collidepoint(evento.pos):
                     if datos_juego["volumen_musica"] <= 95:
                         datos_juego["volumen_musica"] += 5
+                    if not datos_juego["muteado"]:
+                        pygame.mixer.music.set_volume(datos_juego["volumen_musica"] / 100)
                         CLICK_SONIDO.play()
                     else:
                         ERROR_SONIDO.play()
                 elif boton_resta["rectangulo"].collidepoint(evento.pos):
                     if datos_juego["volumen_musica"] > 0:
                         datos_juego["volumen_musica"] -= 5
+                    if not datos_juego["muteado"]:
+                        pygame.mixer.music.set_volume(datos_juego["volumen_musica"] / 100)
                         CLICK_SONIDO.play()
                     else: 
                         ERROR_SONIDO.play()
                 elif boton_mute["rectangulo"].collidepoint(evento.pos):
                     datos_juego["muteado"] = not datos_juego["muteado"]
                     if datos_juego["muteado"]:
-                        pygame.mixer
+                        pygame.mixer.music.set_volume(0)
                     else:
                         pygame.mixer.music.set_volume(datos_juego["volumen_musica"] / 100)
                     CLICK_SONIDO.play()
