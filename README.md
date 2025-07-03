@@ -62,3 +62,39 @@ El juego pone a prueba los conocimientos del jugador a través de preguntas de d
 ## 📂 Estructura del Proyecto
 
 El código está organizado de manera modular para facilitar su lectura y mantenimiento:
+
+PREGUNDADOS-UTN/
+│
+├── main.py                # Punto de entrada principal y bucle del juego.
+├── funciones.py           # Funciones auxiliares (lógica, UI, etc.).
+├── Constantes.py          # Constantes globales (colores, tamaños, etc.).
+│
+├── data/
+│   ├── preguntas.csv      # Base de datos de preguntas y sus estadísticas.
+│   └── partidas.json      # Almacena los puntajes de las partidas guardadas.
+│
+├── pantallas/
+│   ├── Menu.py            # Lógica de la pantalla del menú principal.
+│   ├── Categorias.py      # Lógica de la pantalla de selección de categoría.
+│   ├── Juego.py           # Lógica de la pantalla de juego principal.
+│   ├── Ajustes.py         # Lógica de la pantalla de configuración.
+│   ├── Rankings.py        # Lógica de la pantalla de mejores puntajes.
+│   └── Final.py           # Lógica de la pantalla de fin de partida.
+│
+└── assets/
+├── imagenes/          # Imágenes y texturas para la UI.
+├── sonidos/           # Efectos de sonido y música.
+└── fuentes/           # Fuentes de texto utilizadas.
+
+
+## 🛠️ Tecnologías Utilizadas
+
+* **Lenguaje**: Python
+* **Biblioteca Principal**: Pygame (para la interfaz gráfica, eventos y sonido)
+* **Formato de Datos**:
+    * CSV para la base de datos de preguntas.
+    * JSON para el guardado de partidas.
+
+## 📄 Consigna Original
+
+Este proyecto fue desarrollado siguiendo las pautas del [Segundo Parcial de Programación I (PDF)](gastonidas/pregundados-utn/PREGUNDADOS-UTN-ddfd10c4414eb83fb508fedc1bdd53acaa2171d7/Segundo%20parcial%20Programacio%CC%81n%201%20AD.pdf).

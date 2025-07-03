@@ -3,17 +3,20 @@ from Constantes import *
 from funciones import *
 
 boton_volver = crear_elemento_juego("assets/imagenes/fondo_boton.jpg", 200, 40, 10, 10)
-fondo_pantalla = pygame.transform.scale(pygame.image.load("assets/imagenes/bg2.jpg"), PANTALLA)
-fondo_pantalla.blit(fondo_pantalla, (0, 0))
 
 def mostrar_rankings(pantalla: pygame.Surface, cola_eventos: list[pygame.event.Event], datos_juego: dict) -> str:
     """
-    esta funcion llama a la funcion que almacena y muestra en pantalla los contenidos almacenados 
+    esta funcion muestra y organiza en pantalla los contenidos almacenados en el archivo partidas.json
     """
+    fondo_pantalla = pygame.transform.scale(pygame.image.load("assets/imagenes/bg2.jpg"), PANTALLA)
+    pantalla.blit(fondo_pantalla, (0, 0))
+    
     retorno = "rankings"
     
     for evento in cola_eventos:
-        if evento.type == pygame.MOUSEBUTTONDOWN:
+        if evento.type == pygame.QUIT:
+            retorno = "salir"
+        elif evento.type == pygame.MOUSEBUTTONDOWN:
             if evento.button == 1:
                 if boton_volver["rectangulo"].collidepoint(evento.pos):
                     CLICK_SONIDO.play()
