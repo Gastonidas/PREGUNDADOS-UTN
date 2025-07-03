@@ -18,22 +18,7 @@ icono = pygame.image.load("assets/imagenes/pregmi.png")
 pygame.display.set_icon(icono)
 pygame.mouse.set_visible(False)
 
-# En main.py
-
-datos_juego = {
-    "puntuacion": 0, "vidas": CANTIDAD_VIDAS, "tiempo_restante": TIEMPO_INICIAL_JUEGO,
-    "indice": 0, "volumen_musica": 1.0, "muteado": False, "input_active": False, 
-    "nombre_jugador_input": "",
-    # --- AÑADIR ESTADOS DE COMODINES ---
-    "comodines": {
-        "bomba": True,
-        "x2": True,
-        "doble_chance": True,
-        "pasar": True
-    },
-    "x2_activo": False,
-    "doble_chance_activa": False
-}
+datos_juego = {"puntuacion": 0, "vidas": CANTIDAD_VIDAS, "tiempo_restante": TIEMPO_INICIAL_JUEGO,"indice": 0, "volumen_musica": 100, "muteado": False, "input_active": False,"nombre_jugador_input": "","comodines": {"bomba": True,"x2": True,"doble_chance": True,"pasar": True},"x2_activo": False,"doble_chance_activa": False}
 
 pygame.mixer.music.load("assets/sonidos/musica.mp3")
 pygame.mixer.music.set_volume(datos_juego["volumen_musica"])
@@ -44,19 +29,26 @@ reloj = pygame.time.Clock()
 ventana_actual = "menu"
 
 while corriendo:
+    """
+    el main gestiona la navegacion entre las pantallas
+    """
     reloj.tick(FPS)
     cola_eventos = pygame.event.get()
     
+    for evento in cola_eventos:
+        if evento.type == pygame.QUIT:
+            corriendo = False
+
     if ventana_actual == "menu":
         reiniciar_estadisticas(datos_juego)
         resultado_menu = mostrar_menu(pantalla, cola_eventos)
         if resultado_menu == "juego":
-            ventana_actual = "categorias" # <-- Cambio clave aquí
+            ventana_actual = "categorias"
         else:
             ventana_actual = resultado_menu
     
     elif ventana_actual == "categorias":
-        ventana_actual = mostrar_pantalla_categorias(pantalla, cola_eventos, datos_juego)
+        ventana_actual = mostrar_categorias(pantalla, cola_eventos, datos_juego)
     elif ventana_actual == "juego":
         ventana_actual = mostrar_juego(pantalla, cola_eventos, datos_juego)
     elif ventana_actual == "ajustes":
@@ -68,6 +60,9 @@ while corriendo:
     elif ventana_actual == "salir":
         corriendo = False
 
+    if not corriendo:
+        break
+    
     dibujar_puntero_pixelado(pantalla, puntero_img)
     pygame.display.flip()
 

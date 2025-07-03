@@ -88,5 +88,20 @@
         "nombre": "tonga",
         "puntaje": 1400,
         "fecha": "2025-07-01 00:15:49"
+    },
+    {
+        "nombre": "lean",
+        "puntaje": 900,
+        "fecha": "2025-07-02 13:16:41"
+    },
+    {
+        "nombre": "lean kpo",
+        "puntaje": 1975,
+        "fecha": "2025-07-02 13:20:44"
+    },
+    {
+        "nombre": "prueba ][]]",
+        "puntaje": 25,
+        "fecha": "2025-07-02 21:38:48"
     }
 ]
