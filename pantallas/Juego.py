@@ -44,7 +44,7 @@ def avanzar_pregunta(datos_juego, lista_preguntas):
         btn['desactivado'] = False
     
     # desactiva comodines activos de pregunta anterior
-    datos_juego['x2_activo'] = False
+    #datos_juego['x2_activo'] = False
 
 
 def mostrar_juego(pantalla: pygame.Surface, cola_eventos: list[pygame.event.Event], datos_juego: dict) -> str:
@@ -53,18 +53,13 @@ def mostrar_juego(pantalla: pygame.Surface, cola_eventos: list[pygame.event.Even
     if not preguntas_filtradas:
         categoria_elegida = datos_juego.get("categoria_elegida", None)
         if categoria_elegida:
-            preguntas_filtradas = [p for p in lista_completa_preguntas if p['categoria'] == categoria_elegida]
-            mezclar_lista(preguntas_filtradas)
-        else:
-            preguntas_filtradas = lista_completa_preguntas
-
-    if not preguntas_filtradas:
-        return "menu" 
+            preguntas_filtradas = [preg for preg in lista_completa_preguntas if preg['categoria'] == categoria_elegida]
+            mezclar_lista(preguntas_filtradas) 
 
     fondo_pantalla = pygame.transform.scale(pygame.image.load("assets/imagenes/bg2.jpg"), PANTALLA)
     pantalla.blit(fondo_pantalla, (0, 0))
 
-    retorno = "juego"
+    #retorno = "juego"
     pregunta_actual = preguntas_filtradas[datos_juego['indice']]
 
     if datos_juego["vidas"] == 0 or datos_juego["tiempo_restante"] <= 0:
@@ -81,7 +76,7 @@ def mostrar_juego(pantalla: pygame.Surface, cola_eventos: list[pygame.event.Even
                 # logica clics en respuestas
                 for i, boton in enumerate(botones_respuestas):
                     if not boton['desactivado'] and boton["rectangulo"].collidepoint(pos_clic):
-                        resultado = verificar_respuesta(datos_juego, pregunta_actual, i + 1)
+                        resultado = verificar_respuesta(datos_juego, pregunta_actual, i)
                         if resultado == "usando_doble_chance":
                             boton['desactivado'] = True # desactiva la opcion incorrecta
                             ERROR_SONIDO.play()
@@ -103,7 +98,7 @@ def mostrar_juego(pantalla: pygame.Surface, cola_eventos: list[pygame.event.Even
                     datos_juego["comodines"]["bomba"] = False
                     CLICK_SONIDO.play()
                     
-                    opciones_incorrectas = [i for i in range(4) if i + 1 != pregunta_actual['respuesta_correcta']]
+                    opciones_incorrectas = [i for i in range(4) if i != pregunta_actual['respuesta_correcta']]
                     random.shuffle(opciones_incorrectas)
                     
                     botones_respuestas[opciones_incorrectas[0]]['desactivado'] = True

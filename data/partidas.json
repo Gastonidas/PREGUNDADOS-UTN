@@ -108,5 +108,15 @@
         "nombre": "SDFSDFDSF",
         "puntaje": 25,
         "fecha": "2025-07-03 22:07:27"
+    },
+    {
+        "nombre": "",
+        "puntaje": -75,
+        "fecha": "2025-07-04 13:48:29"
+    },
+    {
+        "nombre": "Agus",
+        "puntaje": 2650,
+        "fecha": "2025-07-04 14:02:41"
     }
 ]

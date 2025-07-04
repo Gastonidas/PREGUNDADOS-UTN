@@ -52,12 +52,7 @@ while corriendo:
 
     if ventana_actual == "menu":
         reiniciar_estadisticas(datos_juego)
-        resultado_menu = mostrar_menu(pantalla, cola_eventos)
-        if resultado_menu == "juego":
-            ventana_actual = "categorias"
-        else:
-            ventana_actual = resultado_menu
-    
+        ventana_actual = mostrar_menu(pantalla, cola_eventos) 
     elif ventana_actual == "categorias":
         ventana_actual = mostrar_categorias(pantalla, cola_eventos, datos_juego)
     elif ventana_actual == "juego":

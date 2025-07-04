@@ -3,7 +3,7 @@ import pygame
 from Constantes import * 
 from funciones import *
 
-fondo_pantalla = pygame.transform.scale(pygame.image.load("assets/imagenes/bg_final.jpg"), PANTALLA)
+fondo_pantalla = pygame.transform.scale(FONDO_FINAL, PANTALLA)
 input_caja_rect = pygame.Rect(ANCHO // 2 - 150, ALTO // 2 + 60, 300, 40)
 boton_guardar_rect = pygame.Rect(ANCHO // 2 - 100, ALTO // 2 + 160, 200, 50)
 
@@ -25,13 +25,14 @@ Event], datos_juego: dict) -> str:
                 datos_juego["input_active"] = False 
 
             if boton_guardar_rect.collidepoint(evento.pos):
-                nombre_jugador = datos_juego["nombre_jugador_input"].strip()
+                nombre_jugador = datos_juego["nombre_jugador_input"].strip() # quitar espacios al principio y al final
                 if nombre_jugador:
                     guardar_partida(nombre_jugador, datos_juego["puntuacion"])
                     datos_juego["nombre_jugador_input"] = "" 
                     datos_juego["input_active"] = False 
                     retorno = "menu" 
-        
+                else:
+                    ERROR_SONIDO.play()
         elif evento.type == pygame.KEYDOWN:
             if datos_juego["input_active"]:
                 if evento.key == pygame.K_BACKSPACE:

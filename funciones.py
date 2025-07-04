@@ -31,7 +31,7 @@ def cargar_preguntas_desde_csv(ruta_archivo: str) -> list[dict]:
                 random.shuffle(opciones)
                 
                 # 3. encuentra la nueva posicion (1, 2, 3 o 4) de la respuesta correcta
-                indice_correcto = opciones.index(respuesta_correcta_texto) + 1
+                indice_correcto = opciones.index(respuesta_correcta_texto) #+ 1
                 
                 # 4. diccionario con el formato esperado
                 pregunta_formateada = {
@@ -154,7 +154,7 @@ def verificar_respuesta(datos_juego:dict,pregunta:dict,respuesta:int) -> bool:
         if datos_juego.get("doble_chance_activa", False):
             # uso la doble chance
             datos_juego["doble_chance_activa"] = False
-            return "usando_doble_chance" # devuelve estado que permite usar la doble chance
+            return "usando_doble_chance" # devuelve estado que permite elegir otra respuesta
         else:
             # Error normal
             datos_juego["vidas"] -= 1
@@ -171,29 +171,6 @@ def crear_elemento_juego(imagen:str,ancho:int,alto:int,pos_x:int,pos_y:int) -> d
     elemento_juego["rectangulo"].y = pos_y
     
     return elemento_juego
-
-# def limpiar_superficie(elemento_juego:dict,textura:str,ancho:int,alto:int) -> None:
-#     elemento_juego["superficie"] =  pygame.transform.scale(pygame.image.load(textura),(ancho,alto))
-    
-# def obtener_respuesta_click(boton_respuesta_uno:dict,boton_respuesta_dos:dict,boton_respuesta_tres:dict,boton_respuesta_cuatro:dict,pos_click:tuple):
-#     lista_aux = [boton_respuesta_uno["rectangulo"],boton_respuesta_dos["rectangulo"],boton_respuesta_tres["rectangulo"], boton_respuesta_cuatro["rectangulo"]]
-#     respuesta = None
-    
-#     for i in range(len(lista_aux)):
-#         if lista_aux[i].collidepoint(pos_click):
-#             respuesta = i + 1
-    
-#     return respuesta
-
-# def cambiar_pregunta(lista_preguntas:list,indice:int,caja_pregunta:dict,boton_respuesta_uno:dict,boton_respuesta_dos:dict,boton_respuesta_tres:dict, boton_respuesta_cuatro:dict) -> dict:
-#     pregunta_actual = lista_preguntas[indice]
-#     limpiar_superficie(caja_pregunta,"assets/imagenes/fondo_boton.jpg",ANCHO_PREGUNTA,ALTO_PREGUNTA)
-#     limpiar_superficie(boton_respuesta_uno,"assets/imagenes/fondo_boton.jpg",ANCHO_BOTON,ALTO_BOTON)
-#     limpiar_superficie(boton_respuesta_dos,"assets/imagenes/fondo_boton.jpg",ANCHO_BOTON,ALTO_BOTON)
-#     limpiar_superficie(boton_respuesta_tres,"assets/imagenes/fondo_boton.jpg",ANCHO_BOTON,ALTO_BOTON)
-#     limpiar_superficie(boton_respuesta_cuatro,"assets/imagenes/fondo_boton.jpg",ANCHO_BOTON,ALTO_BOTON)
-    
-#     return pregunta_actual
 
 
 def crear_botones_menu() -> list:

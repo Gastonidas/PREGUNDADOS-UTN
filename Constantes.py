@@ -15,6 +15,8 @@ PANTALLA = (ANCHO,ALTO)
 FPS = 30
 FONDO_AJUSTES = pygame.image.load("assets/imagenes/bg_ajustes.jpg")
 FONDO_CATEGORIAS = pygame.image.load("assets/imagenes/bg2.jpg")
+FONDO_FINAL = pygame.image.load("assets/imagenes/bg_final.jpg")
+FONDO_MENU = pygame.image.load("assets/imagenes/background2.jpg")
 
 # duracion del juego
 TIEMPO_INICIAL_JUEGO = 180 # en segundos

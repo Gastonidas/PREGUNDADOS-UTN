@@ -3,7 +3,7 @@ from Constantes import *
 from funciones import *
 
 lista_botones = crear_botones_menu()
-fondo_pantalla = pygame.transform.scale(pygame.image.load("assets/imagenes/background2.jpg"),PANTALLA)
+fondo_pantalla = pygame.transform.scale(FONDO_MENU,PANTALLA)
 
 def mostrar_menu(pantalla:pygame.Surface,cola_eventos:list[pygame.event.Event]) -> str:
     """
