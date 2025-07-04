@@ -11,7 +11,7 @@ def mostrar_categorias(pantalla: pygame.Surface, cola_eventos: list[pygame.event
     """
     muestra la animación del dado girando y selecciona una categoría.
     """
-    fondo_pantalla = pygame.transform.scale(pygame.image.load("assets/imagenes/bg2.jpg"), PANTALLA)
+    fondo_pantalla = pygame.transform.scale(FONDO_CATEGORIAS, PANTALLA)
     pantalla.blit(fondo_pantalla, (0, 0))
     
     retorno = "categorias"
@@ -25,7 +25,7 @@ def mostrar_categorias(pantalla: pygame.Surface, cola_eventos: list[pygame.event
             "intervalo_cambio": 100, # velocidad en la que cambia las categorias en ms
             "ultimo_cambio": 0,
             "categoria_mostrada": random.choice(categorias_disponibles),
-            "categoria_final": random.choice(categorias_disponibles)
+            #"categoria_final": random.choice(categorias_disponibles)
         }
 
     anim_data = datos_juego["animacion_dado"]
@@ -44,8 +44,8 @@ def mostrar_categorias(pantalla: pygame.Surface, cola_eventos: list[pygame.event
         else:
             # termina la animacion y muestra la categoria final a la vez que la guarda
             anim_data["activo"] = False
-            anim_data["categoria_mostrada"] = anim_data["categoria_final"]
-            datos_juego["categoria_elegida"] = anim_data["categoria_final"] # guardado
+           # anim_data["categoria_mostrada"] = anim_data["categoria_final"]
+            datos_juego["categoria_elegida"] = anim_data["categoria_mostrada"] # guardado
 
         # dibujar del dado (un cuadro con el nombre de la categoria)
         dado_rect = pygame.Rect((ANCHO - 120) // 2, (ALTO - 150) // 2, 150, 150)

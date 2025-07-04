@@ -18,7 +18,18 @@ icono = pygame.image.load("assets/imagenes/pregmi.png")
 pygame.display.set_icon(icono)
 pygame.mouse.set_visible(False)
 
-datos_juego = {"puntuacion": 0, "vidas": CANTIDAD_VIDAS, "tiempo_restante": TIEMPO_INICIAL_JUEGO,"indice": 0, "volumen_musica": 100, "muteado": False, "input_active": False,"nombre_jugador_input": "","comodines": {"bomba": True,"x2": True,"doble_chance": True,"pasar": True},"x2_activo": False,"doble_chance_activa": False}
+datos_juego = {"puntuacion": 0,
+                "vidas": CANTIDAD_VIDAS,
+                "tiempo_restante": TIEMPO_INICIAL_JUEGO,
+                "indice": 0, 
+                "volumen_musica": 100, 
+                "muteado": False, 
+                "input_active": False,
+                "nombre_jugador_input": "",
+                "comodines": {"bomba": True,"x2": True,"doble_chance": True,"pasar": True},
+                "x2_activo": False,
+                "doble_chance_activa": False
+                }
 
 pygame.mixer.music.load("assets/sonidos/musica.mp3")
 pygame.mixer.music.set_volume(datos_juego["volumen_musica"])

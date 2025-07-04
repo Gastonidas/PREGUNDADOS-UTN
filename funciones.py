@@ -163,9 +163,9 @@ def verificar_respuesta(datos_juego:dict,pregunta:dict,respuesta:int) -> bool:
             datos_juego["x2_activo"] = False # El X2 se pierde si se erra
             return False
 
-def crear_elemento_juego(textura:str,ancho:int,alto:int,pos_x:int,pos_y:int) -> dict:
+def crear_elemento_juego(imagen:str,ancho:int,alto:int,pos_x:int,pos_y:int) -> dict:
     elemento_juego = {}
-    elemento_juego["superficie"] = pygame.transform.scale(pygame.image.load(textura),(ancho,alto))
+    elemento_juego["superficie"] = pygame.transform.scale(pygame.image.load(imagen),(ancho,alto))
     elemento_juego["rectangulo"] = elemento_juego["superficie"].get_rect()
     elemento_juego["rectangulo"].x = pos_x
     elemento_juego["rectangulo"].y = pos_y

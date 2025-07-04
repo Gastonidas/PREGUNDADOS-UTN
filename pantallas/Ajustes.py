@@ -5,11 +5,11 @@ from funciones import *
 pygame.init()
 
 boton_mute = crear_elemento_juego("assets/imagenes/boton_mute.png", 50, 50, 1200, 0)  
-boton_unmute = crear_elemento_juego("assets/imagenes/boton_unmute.png", 50, 50, 730, 0)
+boton_unmute = crear_elemento_juego("assets/imagenes/boton_unmute.png", 50, 50, 1200, 0)
 boton_suma = crear_elemento_juego("assets/imagenes/boton_mas.png",60,60,750,350)
 boton_resta = crear_elemento_juego("assets/imagenes/boton_menos.png",60,60,470,350)
 boton_volver = crear_elemento_juego("assets/imagenes/fondo_boton.jpg",200,40,10,10)
-fondo_pantalla = pygame.transform.scale(pygame.image.load("assets/imagenes/bg_ajustes.jpg"),PANTALLA)
+fondo_pantalla = pygame.transform.scale(FONDO_AJUSTES,PANTALLA)
 
 def mostrar_ajustes(pantalla:pygame.Surface,cola_eventos:list[pygame.event.Event],datos_juego:dict) -> str:
     pantalla.blit(fondo_pantalla,(0,0))
@@ -23,6 +23,8 @@ def mostrar_ajustes(pantalla:pygame.Surface,cola_eventos:list[pygame.event.Event
                 if boton_suma["rectangulo"].collidepoint(evento.pos):
                     if datos_juego["volumen_musica"] <= 95:
                         datos_juego["volumen_musica"] += 5
+                    if datos_juego["volumen_musica"] == 100:
+                        ERROR_SONIDO.play()
                     if not datos_juego["muteado"]:
                         pygame.mixer.music.set_volume(datos_juego["volumen_musica"] / 100)
                         CLICK_SONIDO.play()
@@ -31,6 +33,8 @@ def mostrar_ajustes(pantalla:pygame.Surface,cola_eventos:list[pygame.event.Event
                 elif boton_resta["rectangulo"].collidepoint(evento.pos):
                     if datos_juego["volumen_musica"] > 0:
                         datos_juego["volumen_musica"] -= 5
+                    if datos_juego["volumen_musica"] == 0:
+                        ERROR_SONIDO.play()
                     if not datos_juego["muteado"]:
                         pygame.mixer.music.set_volume(datos_juego["volumen_musica"] / 100)
                         CLICK_SONIDO.play()
@@ -53,15 +57,13 @@ def mostrar_ajustes(pantalla:pygame.Surface,cola_eventos:list[pygame.event.Event
     pantalla.blit(boton_volver["superficie"],boton_volver["rectangulo"])
 
     if datos_juego["muteado"]:
-        imagen_mute = pygame.transform.scale(boton_mute["superficie"], (50, 50))
+        pantalla.blit(boton_mute["superficie"],boton_mute["rectangulo"])
     else:
-        imagen_mute = pygame.transform.scale(boton_unmute["superficie"], (50, 50))
-    pantalla.blit(imagen_mute, boton_mute["rectangulo"])
+        pantalla.blit(boton_unmute["superficie"],boton_unmute["rectangulo"])
 
     mostrar_texto(
         pantalla,f"{datos_juego['volumen_musica']} %",FUENTE_VOLUMEN, COLOR_BLANCO,pygame.Rect(550, 350, 200, 60) )
-    mostrar_texto(boton_volver["superficie"],
-    "VOLVER", FUENTE_RESPUESTA,COLOR_BLANCO,boton_volver["superficie"].get_rect())
+    mostrar_texto(boton_volver["superficie"], "VOLVER", FUENTE_RESPUESTA,COLOR_BLANCO,boton_volver["superficie"].get_rect())
 
     return retorno
     

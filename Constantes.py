@@ -13,6 +13,8 @@ ANCHO = 1280
 ALTO = 720
 PANTALLA = (ANCHO,ALTO)
 FPS = 30
+FONDO_AJUSTES = pygame.image.load("assets/imagenes/bg_ajustes.jpg")
+FONDO_CATEGORIAS = pygame.image.load("assets/imagenes/bg2.jpg")
 
 # duracion del juego
 TIEMPO_INICIAL_JUEGO = 180 # en segundos
