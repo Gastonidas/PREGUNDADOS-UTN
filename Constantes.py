@@ -18,6 +18,7 @@ FONDO_CATEGORIAS = pygame.image.load("assets/imagenes/bg2.jpg")
 
 # duracion del juego
 TIEMPO_INICIAL_JUEGO = 180 # en segundos
+TIEMPO_ACIERTOS_CONSECUTIVOS = 15
 
 # 
 BOTON_JUGAR = 0

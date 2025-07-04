@@ -5,7 +5,7 @@ import pygame
 
 def cargar_preguntas_desde_csv(ruta_archivo: str) -> list[dict]:
     """
-    Lee preguntas desde un CSV con formato:
+    abre y lee las preguntas desde un CSV con formato:
     categoria,pregunta,respuesta_correcta,opcion_1,opcion_2,opcion_3
     
     Mezcla las opciones y devuelve la lista de preguntas en el formato
@@ -42,7 +42,6 @@ def cargar_preguntas_desde_csv(ruta_archivo: str) -> list[dict]:
                     'respuesta_3': opciones[2],
                     'respuesta_4': opciones[3],
                     'respuesta_correcta': indice_correcto
-                    # 'categoria': fila['categoria'] # descomentar si se quiere usar la categoria para algo
                 }
                 preguntas.append(pregunta_formateada)
 
@@ -145,6 +144,7 @@ def verificar_respuesta(datos_juego:dict,pregunta:dict,respuesta:int) -> bool:
         
         if datos_juego["aciertos_consecutivos"] >= 5:
             datos_juego["vidas"] += 1
+            datos_juego["tiempo_restante"] += TIEMPO_ACIERTOS_CONSECUTIVOS
             datos_juego["aciertos_consecutivos"] = 0
         
         datos_juego["doble_chance_activa"] = False # se desactiva la doble chance si se acierta

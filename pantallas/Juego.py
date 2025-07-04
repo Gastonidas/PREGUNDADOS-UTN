@@ -12,10 +12,12 @@ pos_x_respuestas = (ANCHO - ANCHO_BOTON) // 2
 y_inicial_respuestas = 245
 espaciado_vertical_respuestas = 100
 
-botones_respuestas = [
-    {**crear_elemento_juego("assets/imagenes/fondo_boton.jpg", ANCHO_BOTON, ALTO_BOTON, pos_x_respuestas, y_inicial_respuestas + (i * espaciado_vertical_respuestas)), 'desactivado': False}
-    for i in range(4)
-]
+botones_respuestas = []
+for i in range(4):
+    y = y_inicial_respuestas + i * espaciado_vertical_respuestas
+    boton = crear_elemento_juego("assets/imagenes/fondo_boton.jpg", ANCHO_BOTON, ALTO_BOTON, pos_x_respuestas, y)
+    boton['desactivado'] = False
+    botones_respuestas.append(boton)
 
 # botones comodines
 comodines_pos_y = ALTO - ALTO_COMODIN - 10

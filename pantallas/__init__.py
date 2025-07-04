@@ -1,1 +1,1 @@
-# archivo agregado a la carpeta para que me permita importar los modulos de pantallas dentro de main.py
+# indica que la carpeta debe ser tratada como un paquete de Python. Esto permite que ortos modulos puedan importar los archivos dentro de esta carpeta
